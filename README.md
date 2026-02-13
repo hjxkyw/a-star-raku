@@ -93,10 +93,58 @@ When you run the visualization, you will see the Agent (●) jump from one side 
   * Class TerrainMap: Handles grid generation, mud randomization, and ASCII rendering.
 * Heuristic: Manhattan Distance.
 
+
+### Example run
+
+```
+$ ./a-star.raku -1.5
+Auto-play mode (1.5s delay)...
+
+STEP 1:
+  CHOSEN: Started to (Col 0, Row 0) (GRASS)
+  COST DETAIL: f=18 (g=0 + h=18)
+
+==============================
+A* GRID STATE
+------------------------------
+ ●  F  .  ~  .  .  .  .  ~  . 
+ F  .  .  ~  .  ~  .  .  .  . 
+ .  .  ~  ~  ~  ~  .  .  .  . 
+ ~  ~  ~  ~  .  ~  .  .  .  . 
+ ~  .  .  ~  .  ~  .  .  ~  . 
+ .  .  ~  .  ~  .  .  .  .  . 
+ .  ~  ~  .  .  .  .  .  ~  ~ 
+ .  .  .  .  .  .  .  ~  ~  . 
+ .  ~  .  .  ~  ~  .  .  .  . 
+ .  .  .  .  .  .  ~  .  ~  ★ 
+------------------------------
+CURRENT LOCATION: (Col 0, Row 0) (GRASS)
+
+STEP 2:
+  CHOSEN: Moved Down to (Col 0, Row 1) (GRASS)
+  COST DETAIL: f=18 (g=1 + h=17)
+
+==============================
+A* GRID STATE
+------------------------------
+ ○  F  .  ~  .  .  .  .  ~  . 
+ ●  F  .  ~  .  ~  .  .  .  . 
+ F  .  ~  ~  ~  ~  .  .  .  . 
+ ~  ~  ~  ~  .  ~  .  .  .  . 
+ ~  .  .  ~  .  ~  .  .  ~  . 
+ .  .  ~  .  ~  .  .  .  .  . 
+ .  ~  ~  .  .  .  .  .  ~  ~ 
+ .  .  .  .  .  .  .  ~  ~  . 
+ .  ~  .  .  ~  ~  .  .  .  . 
+ .  .  .  .  .  .  ~  .  ~  ★ 
+------------------------------
+CURRENT LOCATION: (Col 0, Row 1) (GRASS)
+^C
+```
+
 ### 📄 License
 
-
-## Distributed under the same terms as Raku itself.
+#### Distributed under the same terms as Raku itself.
 
 ## WARNING FOR THE PURE OF HEART:
 
