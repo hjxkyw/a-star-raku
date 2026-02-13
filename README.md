@@ -24,9 +24,9 @@ This engine was built to demonstrate three specific concepts often lost in stand
 
 This project requires Raku.
 
-1. Install Raku: https://raku.org/downloads/
-2. Clone the repo:
-   git clone https://github.com/YOUR_USERNAME/a-star-raku.git
+1. Install Raku: https://raku.org
+2. Clone the repo: 
+   git clone https://github.com/YOUR_USERNAME/a-star-raku.git 
    cd a-star-raku
 3. Make executable:
    chmod +x a-star.raku
