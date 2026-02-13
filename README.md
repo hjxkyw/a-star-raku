@@ -146,6 +146,6 @@ CURRENT LOCATION: (Col 0, Row 1) (GRASS)
 
 #### Distributed under the same terms as Raku itself.
 
-## WARNING FOR THE PURE OF HEART:
+## WARNING FOR THE PURE OF HEART
 
 The program was created with AI assistance. It's not "vibe coding", because I do understand both A* and Raku. (To be honest, after a certain point I stopped checking the code, and just ran the tests). Also, most of the README is AI slop 😀, though it does dwell in some interesting behavior of the A* algorithm.
