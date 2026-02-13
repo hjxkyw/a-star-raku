@@ -1,4 +1,4 @@
- # An implementation of the A* algorithm using the Raku language
+# An implementation of the A* algorithm using the Raku language
 
 > A Raku-based text visualization of the A* search algorithm.
 
@@ -23,21 +23,21 @@ This project requires Raku.
 
 ## 🎮 Usage
 
-# 1. Interactive Mode (Step-by-Step)
+### 1. Interactive Mode (Step-by-Step)
 The default mode. The program pauses after every step, allowing you to inspect the grid and the priority queue. Press ENTER to advance.
 
 ./a-star.raku
 
-# 2. Auto-Play Mode
+### 2. Auto-Play Mode
 Runs the visualization automatically. You can specify the delay in seconds (default is 1.0s).
 
-# Run with default 1 second delay
+Run with default 1 second delay
 ./a-star.raku -
 
-# Run with custom 0.2 second delay (Fast mode)
+Run with custom 0.2 second delay (Fast mode)
 ./a-star.raku -0.2
 
-# 3. Analysis Mode (File Log)
+### 3. Analysis Mode (File Log)
 Suppress visual output and dump the complete expansion log to a file. Useful for debugging or performance analysis.
 
 ./a-star.raku log.txt
