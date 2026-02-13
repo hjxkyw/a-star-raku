@@ -32,9 +32,11 @@ The default mode. The program pauses after every step, allowing you to inspect t
 Runs the visualization automatically. You can specify the delay in seconds (default is 1.0s).
 
 Run with default 1 second delay
+
 ./a-star.raku -
 
 Run with custom 0.2 second delay (Fast mode)
+
 ./a-star.raku -0.2
 
 ### 3. Analysis Mode (File Log)
