@@ -1,10 +1,10 @@
-# A* Pathfinding: The Ghost in the Grid
+## A* Pathfinding: The Ghost in the Grid
 
 > A text-based visualization of the A* search algorithm written in the Raku programming language.
 
 Most pathfinding visualizations show a smooth, expanding wave of exploration. This project demonstrates what actually happens inside the priority queue: a "teleporting" agent that constantly jumps between different "promises" (frontier nodes) based on their mathematical cost (f = g + h), rather than physical proximity.
 
-## 🎯 Why this project?
+### 🎯 Why this project?
 
 This engine was built to demonstrate three specific concepts often lost in standard tutorials:
 
@@ -12,7 +12,7 @@ This engine was built to demonstrate three specific concepts often lost in stand
 2. Weighted Terrain: The grid isn't just empty space. It contains Mud (cost=10) and Grass (cost=1). The search frontier visually distinguishes between low-cost leads (F) and high-cost mud traps (M).
 3. Search Efficiency: The program calculates exactly how "wasteful" the search was by comparing the final path length to the total number of visited nodes.
 
-## 🚀 Features
+### 🚀 Features
 
 * Weighted A* Implementation: Full implementation using f = g + h cost logic.
 * Dual Frontier visualization: Distinguishes between standard Frontier nodes (F) and high-cost Mud nodes (M).
@@ -20,7 +20,7 @@ This engine was built to demonstrate three specific concepts often lost in stand
 * Auto-Play Mode: Watch the search unfold automatically with configurable speed.
 * Detailed Logging: Output the grid state, current costs, and heap status to the terminal or a file.
 
-## 📦 Installation
+### 📦 Installation
 
 This project requires Raku.
 
@@ -31,28 +31,28 @@ This project requires Raku.
 3. Make executable:
    chmod +x a-star.raku
 
-## 🎮 Usage
+### 🎮 Usage
 
-### 1. Interactive Mode (Step-by-Step)
+#### 1. Interactive Mode (Step-by-Step)
 The default mode. The program pauses after every step, allowing you to inspect the grid and the priority queue. Press ENTER to advance.
 
 ./a-star.raku
 
-### 2. Auto-Play Mode
+#### 2. Auto-Play Mode
 Runs the visualization automatically. You can specify the delay in seconds (default is 1.0s).
 
-# Run with default 1 second delay
+##### Run with default 1 second delay
 ./a-star.raku -
 
-# Run with custom 0.2 second delay (Fast mode)
+##### Run with custom 0.2 second delay (Fast mode)
 ./a-star.raku -0.2
 
-### 3. Analysis Mode (File Log)
+##### 3. Analysis Mode (File Log)
 Suppress visual output and dump the complete expansion log to a file. Useful for debugging or performance analysis.
 
 ./a-star.raku log.txt
 
-## 🗺️ The Grid Legend
+### 🗺️ The Grid Legend
 
 Symbol  Meaning         Context
 ------  -------         -------
@@ -65,7 +65,7 @@ M       Mud Frontier    A candidate node in Mud (High cost).
 ~       Mud             Unexplored high-cost terrain.
 .       Grass           Unexplored low-cost terrain.
 
-## 🧠 The Logic: Why does it "Teleport"?
+### 🧠 The Logic: Why does it "Teleport"?
 
 When you run the visualization, you will see the Agent (●) jump from one side of the map to the other instantly. This is not a bug.
 
@@ -75,7 +75,7 @@ When you run the visualization, you will see the Agent (●) jump from one side 
 4. Suddenly, an old node left behind turns ago has a lower f cost than the node in the mud.
 5. The algorithm stops processing the mud path and "teleports" back to that old node to try a different route.
 
-## 🛠 Technical Implementation
+### 🛠 Technical Implementation
 
 * Language: Raku (Perl 6)
 * Architecture:
@@ -84,6 +84,6 @@ When you run the visualization, you will see the Agent (●) jump from one side 
   * Class TerrainMap: Handles grid generation, mud randomization, and ASCII rendering.
 * Heuristic: Manhattan Distance.
 
-## 📄 License
+### 📄 License
 
 Distributed under the same terms as Raku itself.
