@@ -123,6 +123,7 @@ class TerrainMap does SearchProblem
   {
     my @moves;
     my @directions = ( [0,1,"Down"], [0,-1,"Up"], [1,0,"Right"], [-1,0,"Left"] );
+
     for @directions -> $d
     {
       my $nx = $loc.x + $d[0];
@@ -223,6 +224,7 @@ class MinCostHeap
 
   # comparison function
   has &.compare is required;
+  
   method push($item)
   {
     @!items.push($item);
@@ -314,12 +316,15 @@ sub run-experiment(TerrainMap $map, $out-handle, Bool :$interactive, Bool :$auto
   my $root = Node.new(location => $map.initial-location, h-cost => $map.heuristic($map.initial-location));
   my $frontier = MinCostHeap.new(compare => { $^a.f-cost <=> $^b.f-cost });
   $frontier.push($root);
+
   # %best tracks the lowest cost found to reach any given coordinate.
   my %best = ($map.initial-location.key => 0);
+
   # %closed-set tracks nodes that have already been expanded.
   my %closed-set;
 
   my $step-count = 0;
+
   while !$frontier.is-empty
   {
     # 2. Pick the best node (lowest f-cost) from the open set
