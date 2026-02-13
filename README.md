@@ -54,16 +54,25 @@ Suppress visual output and dump the complete expansion log to a file. Useful for
 
 ### 🗺️ The Grid Legend
 
-Symbol  Meaning         Context 
+Symbol  Meaning         Context
+
 ------  -------         ------- 
+
 ●       Agent           The node currently being expanded (The "Head"). 
+
 ★       Goal            The target destination. 
+
 ○       Start           The starting point. 
+
 F       Frontier        A candidate node on Grass (Low cost). 
+
 M       Mud Frontier    A candidate node in Mud (High cost). 
--       Explored        Nodes in the "Closed Set" (already visited). 
-~       Mud             Unexplored high-cost terrain. 
-.       Grass           Unexplored low-cost terrain. 
+
+-       Explored        Nodes in the "Closed Set" (already visited).
+-   
+~       Mud             Unexplored high-cost terrain.
+
+.       Grass           Unexplored low-cost terrain.
 
 ### 🧠 The Logic: Why does it "Teleport"?
 
