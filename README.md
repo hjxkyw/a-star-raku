@@ -1,6 +1,16 @@
-# An implementation of the A* algorithm using the Raku language
+# A* Pathfinding: The Ghost in the Grid
 
-> A Raku-based text visualization of the A* search algorithm.
+> A text-based visualization of the A* search algorithm written in the Raku programming language.
+
+Most pathfinding visualizations show a smooth, expanding wave of exploration. This project demonstrates what actually happens inside the priority queue: a "teleporting" agent that constantly jumps between different "promises" (frontier nodes) based on their mathematical cost (f = g + h), rather than physical proximity.
+
+## 🎯 Why this project?
+
+This engine was built to demonstrate three specific concepts often lost in standard tutorials:
+
+1. The "Teleporting" Agent: The algorithm doesn't "walk." If it hits a high-cost obstacle, it instantly abandons the current path and jumps to a cheaper node discovered earlier on the other side of the map.
+2. Weighted Terrain: The grid isn't just empty space. It contains Mud (cost=10) and Grass (cost=1). The search frontier visually distinguishes between low-cost leads (F) and high-cost mud traps (M).
+3. Search Efficiency: The program calculates exactly how "wasteful" the search was by comparing the final path length to the total number of visited nodes.
 
 ## 🚀 Features
 
@@ -31,12 +41,10 @@ The default mode. The program pauses after every step, allowing you to inspect t
 ### 2. Auto-Play Mode
 Runs the visualization automatically. You can specify the delay in seconds (default is 1.0s).
 
-Run with default 1 second delay
-
+# Run with default 1 second delay
 ./a-star.raku -
 
-Run with custom 0.2 second delay (Fast mode)
-
+# Run with custom 0.2 second delay (Fast mode)
 ./a-star.raku -0.2
 
 ### 3. Analysis Mode (File Log)
@@ -59,12 +67,12 @@ M       Mud Frontier    A candidate node in Mud (High cost).
 
 ## 🧠 The Logic: Why does it "Teleport"?
 
-When you run the visualization, you will see the Agent (●) jump from (Col 2, Row 2) to (Col 8, Row 1) instantly. This is not a bug.
+When you run the visualization, you will see the Agent (●) jump from one side of the map to the other instantly. This is not a bug.
 
 1. A* maintains a Min-Cost Heap of all known edge nodes (the Frontier).
 2. Every step, it pops the node with the lowest Total Estimated Cost (f).
 3. If the current path enters Mud, the g cost (effort so far) spikes by +10.
-4. Suddenly, an old node left behind 5 turns ago has a lower f cost than the node in the mud.
+4. Suddenly, an old node left behind turns ago has a lower f cost than the node in the mud.
 5. The algorithm stops processing the mud path and "teleports" back to that old node to try a different route.
 
 ## 🛠 Technical Implementation
@@ -78,8 +86,4 @@ When you run the visualization, you will see the Agent (●) jump from (Col 2, R
 
 ## 📄 License
 
-Whatever license by the Raku language.
-
-## WARNING FOR THE PURE OF HEART: AI GENERATED
-
-All the code was written with AI assistance. Not "vibe code" though, because I do understand both the A* algorithm and the Raku programming language. (To be honest, after a certain point I stopped checking the code, and just ran tests with the program).
+Distributed under the same terms as Raku itself.
