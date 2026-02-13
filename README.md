@@ -1,6 +1,6 @@
-## A* Pathfinding: The Ghost in the Grid
+## The A* Algorithm written in Raku
 
-> A text-based visualization of the A* search algorithm written in the Raku programming language.
+A text-based visualization of the A* search algorithm written in the Raku programming language.
 
 Most pathfinding visualizations show a smooth, expanding wave of exploration. This project demonstrates what actually happens inside the priority queue: a "teleporting" agent that constantly jumps between different "promises" (frontier nodes) based on their mathematical cost (f = g + h), rather than physical proximity.
 
