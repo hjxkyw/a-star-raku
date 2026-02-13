@@ -88,4 +88,9 @@ When you run the visualization, you will see the Agent (●) jump from one side 
 
 ### 📄 License
 
-Distributed under the same terms as Raku itself.
+
+## Distributed under the same terms as Raku itself.
+
+## WARNING FOR THE PURE OF HEART:
+
+The program was created with AI assistance. It's not "vibe coding", because I do understand both A* and Raku. (To be honest, after a certain point I stopped checking the code, and just ran the tests).
